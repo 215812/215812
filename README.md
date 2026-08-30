@@ -39,11 +39,10 @@ Industrial Systems
 
 ## 🚀 Projects
 
-### `ControlX`
-
+### [ControlX](ctrlx.215812.com)
 Control & automation engineering projects, experiments and implementations.
 
-### `Radar Detection System`
+### [Smart-Arduino-Radar-System](https://github.com/215812/Smart-Arduino-Radar-System)
 
 A 360° object-detection system using sensors with servo/stepper-based scanning.
 
