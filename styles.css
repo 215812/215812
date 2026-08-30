@@ -1,0 +1,153 @@
+:root {
+  --bg: #0a0a09;
+  --ink: #f1efe8;
+  --ink-dim: #6f6d64;
+  --ink-faint: #46443d;
+  --ring: #3a3830;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2.75rem, 8vh, 4.5rem);
+  padding: 8vh 6vw;
+  text-align: center;
+}
+
+/* ---------- Identity mark ---------- */
+
+.mark {
+  display: inline-block;
+  font-weight: 600;
+  font-size: clamp(4rem, 13vw, 11rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    letter-spacing 420ms var(--ease),
+    transform 420ms var(--ease),
+    color 420ms var(--ease);
+}
+
+.mark:hover,
+.mark:focus-visible {
+  letter-spacing: -0.005em;
+  transform: scale(1.015);
+  color: #ffffff;
+}
+
+.mark:focus-visible {
+  outline: none;
+  box-shadow: 0 8px 0 -4px var(--ring);
+}
+
+.mark:active {
+  transform: scale(0.99);
+}
+
+/* ---------- Socials ---------- */
+
+.socials {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: clamp(0.9rem, 2.5vw, 1.75rem);
+  row-gap: 0.6rem;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.s-label {
+  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+  font-weight: 400;
+  color: var(--ink-dim);
+  text-align: right;
+}
+
+.s-handle {
+  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+  font-weight: 500;
+  color: var(--ink);
+  text-align: left;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition:
+    color 280ms var(--ease),
+    border-color 280ms var(--ease);
+}
+
+.s-handle:hover,
+.s-handle:focus-visible {
+  color: #ffffff;
+  border-color: var(--ink-dim);
+}
+
+.s-handle:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+}
+
+/* ---------- Email ---------- */
+
+.email {
+  font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+  font-weight: 400;
+  color: var(--ink-faint);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 280ms var(--ease);
+}
+
+.email:hover,
+.email:focus-visible {
+  color: var(--ink-dim);
+}
+
+.email:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 380px) {
+  .socials {
+    column-gap: 0.7rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .mark,
+  .s-handle,
+  .email {
+    transition: none;
+  }
+}
